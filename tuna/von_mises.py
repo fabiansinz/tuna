@@ -88,5 +88,5 @@ def fast_tuning_bootstrap(phi, y, balanced=True, shuffles=5000):
         np.random.shuffle(y)
         s_shuffle.append(np.abs((y * factor) @ np.exp(2j * phi)))
     s_shuffle = np.array(s_shuffle)
-    p = (s_shuffle > s).mean()
+    p = (s_shuffle > s).mean() + 0.5 / shuffles
     return p, s, s_shuffle
