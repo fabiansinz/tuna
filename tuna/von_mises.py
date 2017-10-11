@@ -21,7 +21,7 @@ def g(c, w):
     return np.exp(-w * (1 - c))
 
 
-def von_mises2(phi, a0, a1, a2, theta, w):
+def von_mises2(phi, a0, a1, a2, theta, w, **kwargs):
     """ two-peak von Mises """
     c = np.cos(phi - theta)
     return a0 + a1 * g(c, w) + a2 * g(-c, w)
